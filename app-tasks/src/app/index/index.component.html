@@ -1,0 +1,455 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-12" id="home">
+  <div class="absolute-bg">
+   <div class="first-bg">
+       <img src="/assets/images/background.png" class="img-fluid w-100" alt="background-img">
+   </div>
+  </div>
+</div>
+<!-- Header  -->
+<header>
+<div class="container">
+   <div class="row">
+     <!-- Nav 1 -->
+       <nav class="navbar fixed-top navbar-expand-lg d-none" id="navbar-top1">
+           <div class="container-fluid">
+            <a routerLink="/" class="navbar-brand">LOGO</a>
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ms-auto mb-2">
+                 <li class="nav-item mx-2">
+                   <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                 </li>
+                 <li class="nav-item mx-2">
+                   <a class="nav-link" href="#aboutus">About us</a>
+                 </li>
+                 <li class="nav-item ms-2">
+                   <a class="nav-link" href="#services" tabindex="-1">Services</a>
+                 </li>
+                 <li class="nav-item ms-2" *ngIf="!isLoggedIn">
+                  <a class="nav-link pointer"  data-bs-toggle="modal" data-bs-target="#login">Login/Register</a>
+                 </li>
+                  <li class="nav-item ms-2" *ngIf="isLoggedIn">
+                  <a class="nav-link pointer" (click)="Logout()">Logout</a>
+                  </li>
+               </ul>
+             </div>
+           </div>
+         </nav>
+       <!-- End Nav 1 -->
+        <!-- Nav 2 -->
+        <nav class="navbar fixed-top navbar-expand-lg" id="navbar-top2">
+         <div class="container-fluid">
+          <a routerLink="/" class="navbar-brand">LOGO</a>
+           <div class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarContent" >
+             <i class="fas fa-bars"></i>
+           </div>
+           <div class="collapse navbar-collapse" id="navbarContent">
+             <ul class="navbar-nav ms-auto mb-2">
+               <li class="nav-item mx-2">
+                 <a class="nav-link active" aria-current="page" href="#home">Home</a>
+               </li>
+               <li class="nav-item mx-2">
+                 <a class="nav-link" href="#aboutus">About us</a>
+               </li>
+               <li class="nav-item ms-2">
+                 <a class="nav-link" href="#services" tabindex="-1">Services</a>
+               </li>
+               <li class="nav-item ms-2" *ngIf="!isLoggedIn">
+                <a class="nav-link pointer"  data-bs-toggle="modal" data-bs-target="#login">Login/Register</a>
+               </li>
+              <li class="nav-item ms-2" *ngIf="isLoggedIn">
+               <a class="nav-link pointer" (click)="Logout()">Logout</a>
+              </li>
+             </ul>
+           </div>
+         </div>
+       </nav>
+     <!-- End Nav 2-->
+       <!--  Inside container  -->
+        <div class="inside-container">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+           <div class="row">
+             <div class="col-lg-6 col-md-6 col-sm-6 col-12" >
+               <div class="bigText">
+                 <h1>Welcome back</h1>
+                 <p>Lorem ipsum lorem yi quio zerr Lorem ipsum lorem yi quio zerr</p>
+                 <div class="my-2">
+                   <a routerLink="/dashboard" class="createTask-btn d-flex align-items-center justify-content-center"> Create Task</a>
+                 </div>
+               </div>
+             </div>
+             <div class="col-lg-6 col-md-6 col-sm-6 col-12 d-flex justify-content-end" >
+               <img src="/assets/images/task-right.svg" alt="task-img" class="img-fluid task-img">
+             </div>
+           </div>
+         </div>
+        </div>
+       <!--  End Inside container  -->
+     </div>
+   </div>
+  </header>
+   <!--  End Header  -->
+   <!--  About us Section  -->
+   <div id="aboutus">
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+           <div class="row">
+             <div class="col-lg-6 col-md-12 col-sm-12 col-12 border-right">
+               <div>
+                 <img src="/assets/images/tasks-about.svg" alt="img-about" class="img-fluid img-about">
+               </div>
+             </div>
+             <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+               <div>
+                 <div class="bg-LeastOrange mt-2 d-flex justify-content-center ms-3">
+                   <h4 class="text-white text-center">About <strong>us</strong></h4>
+                 </div>
+                 <div class="my-5 d-flex flex-column">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                 </div>
+                 <div class="readMore-div">
+                   <a href="#" class="readMore-btn text-center">Read more...</a>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!--  End About us  -->
+   <!--  Lorem ipsum  -->
+   <div id="lorem">
+       <div class="container">
+         <div class="row">
+           <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+             <div class="row">
+               <div class="col-lg-6 col-md-12 col-sm-12 col-12 border-right">
+                 <div>
+                   <div class="bg-Lorem bg-white mt-2 d-flex justify-content-center ms-4">
+                     <h4 class="text-center">Lorem <strong>ipsum</strong></h4>
+                   </div>
+                   <div class="my-5 d-flex flex-column">
+                     <ul>
+                       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                     </ul>
+                   </div>
+                 </div>
+               </div>
+               <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                 <div>
+                   <img src="/assets/images/tasks-lorem.svg" alt="img-lorem" class="img-fluid img-lorem">
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+   </div>
+   <!--  End Lorem ipsum -->
+   <!--  Services  -->
+   <div id="services">
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+         <div class="text-center">
+             <h2>Services</h2>
+             <p class="text-muted fs-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+         </div>
+       </div>
+       <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+         <div class="row">
+           <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+               <div class="service-box">
+                   <div class="img-box">
+                     <img src="/assets/images/avatar.png" alt="img-box" width="90" class="img-fluid">
+                   </div>
+                   <div class="text-box mt-1">
+                     <h3 class="fw-bold">Service 1</h3>
+                   </div>
+                  <div class="d-flex justify-content-center">
+                   <div class="w-50 my-1">
+                     <p class="text-muted text-small">Lorem ipsum dolor sit amet, do eiusmod tempor incididunt.</p>
+                   </div>
+                  </div>
+                  <div class="see-more">
+                    See more
+                  </div>
+               </div>
+           </div>
+           <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+             <div class="service-box">
+               <div class="img-box">
+                 <img src="/assets/images/avatar.png" alt="img-box" width="90" class="img-fluid">
+               </div>
+               <div class="text-box mt-1">
+                 <h3 class="fw-bold">Service 2</h3>
+               </div>
+              <div class="d-flex justify-content-center">
+               <div class="w-50 my-1">
+                 <p class="text-muted text-small">Lorem ipsum dolor sit amet, do eiusmod tempor incididunt.</p>
+               </div>
+              </div>
+              <div class="see-more">
+                See more
+              </div>
+           </div>
+           </div>
+           <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+             <div class="service-box">
+               <div class="img-box">
+                 <img src="/assets/images/avatar.png" alt="img-box" width="90" class="img-fluid">
+               </div>
+               <div class="text-box mt-1">
+                 <h3 class="fw-bold">Service 3</h3>
+               </div>
+              <div class="d-flex justify-content-center">
+               <div class="w-50 my-1">
+                 <p class="text-muted text-small">Lorem ipsum dolor sit amet, do eiusmod tempor incididunt.</p>
+               </div>
+              </div>
+              <div class="see-more">
+                See more
+              </div>
+            </div>
+           </div>
+           <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+             <div class="service-box">
+               <div class="img-box">
+                 <img src="/assets/images/avatar.png" alt="img-box" width="90" class="img-fluid">
+               </div>
+               <div class="text-box mt-1">
+                 <h3 class="fw-bold">Service 4</h3>
+               </div>
+              <div class="d-flex justify-content-center">
+               <div class="w-50 my-1">
+                 <p class="text-muted text-small">Lorem ipsum dolor sit amet, do eiusmod tempor incididunt.</p>
+               </div>
+              </div>
+              <div class="see-more">
+                See more
+              </div>
+            </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+<!--  End Services -->
+<!--  Footer  -->
+<footer id="footer">
+ <div class="container">
+   <div class="row">
+     <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-5">
+       <div class="text-center">
+           <h2 class="text-white">YOUR LOGO</h2>
+       </div>
+     </div>
+     <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+       <div class="row">
+         <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+           <h3 class="text-white fw-bold mb-5">Get in touch</h3>
+             <div class="mb-4">
+               <input type="text" placeholder="Email" class="footer-input">
+             </div>
+             <div class="mb-4">
+               <h3 class="h2 text-white fw-bold">+ 1 888 999 456</h3>
+             </div>
+             <p style="color: #E8E8E8;">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               consectetur adipiscing elit consectetur adipiscing elit.</p>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+             <h3 class="text-white fw-bold mb-4">Customer Service</h3>
+             <ul class="ul-rmstyle pad-25">
+                 <li><span class="left-part">
+                     <a href="#">Help</a></span><span class="right-part"><a href="#">My Account</a></span>
+                 </li>
+                 <li><span class="left-part">
+                     <a href="#">Contact Us</a></span><span class="right-part"><a href="#">Arder Status</a></span>
+                 </li>
+                 <li><span class="left-part">
+                     <a href="#">Warranty</a></span><span class="right-part"><a href="#">Payment</a></span>
+                 </li>
+                 <li><span class="left-part">
+                     <a href="#">Terms E Conditions</a></span><span class="right-part"><a href="#">Oders</a></span>
+                 </li>
+                 <li><span class="left-part">
+                     <a href="#">Shopping information</a></span><span class="right-part"><a href="#">Cancellations</a></span>
+                 </li>
+             </ul>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+           <h3 class="text-white fw-bold mb-4">Social media</h3>
+           <div class="mb-3">
+             <i class="fab fa-twitter"></i>
+             <a href="#" class="text-white ms-3">www.twitter.com</a>
+           </div>
+           <div class="mb-3">
+             <i class="fab fa-youtube"></i>
+             <a href="#" class="text-white  ms-3">www.youtube.com</a>
+           </div>
+           <div class="mb-3">
+             <i class="fab fa-facebook"></i>
+             <a href="#" class="text-white  ms-3">www.facebook.com</a>
+           </div>
+           <div class="mb-3">
+             <i class="fab fa-linkedin"></i>
+             <a href="#" class="text-white  ms-3">www.Linkedin.com</a>
+           </div>
+         </div>
+       </div>
+     </div>
+   <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+     <div class="bottom-footer">
+       <p>Copyright © 2021-2022 It's yours . Created by <a href="#">Nano</a>
+       </p>
+   </div>
+   </div>
+ </div>
+</div>
+</footer>
+<!-- End Footer -->
+<!-- Back to top button -->
+<button type="button" class="btn-lg" id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
+<!-- Login Modal -->
+<div class="modal fade" id="login" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-xl">
+<div class="modal-content border-content">
+ <div class="modal-body">
+   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeModal></button>
+   <div class="row">
+     <div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-5">
+         <h3 class="text-center">Login</h3>
+         <form method="post" [formGroup]="LoginForm" (ngSubmit)="loginUser()">
+           <div class="mx-5">
+             <div class="mb-4">
+               <label for="username">Username: <span class="text-danger">*</span></label>
+               <input type="text" id="username-1" formControlName="username" class="form-input" placeholder="Username">
+               <div class="text-danger" *ngIf="loginForm.username.invalid && loginForm.username.touched">
+                  <div *ngIf="loginForm.username.errors?.['required']">
+                    Username is required
+                  </div>
+                  <div *ngIf="loginForm.username.errors?.minlength">
+                    Username must be at least 5 characters long.
+                  </div>
+                  <div *ngIf="loginForm.username.errors?.maxlength">
+                    Username must not be longer than 30 characters.
+                  </div>
+               </div>
+             </div>
+             <div class="mb-4">
+               <label for="password">Password: <span class="text-danger">*</span></label>
+               <input type="password" id="password-1" formControlName="password" class="form-input" placeholder="Password">
+               <div class="text-danger" *ngIf="loginForm.password.invalid && loginForm.password.touched">
+                  <div *ngIf="loginForm.password.errors?.['required']">
+                    Password is required
+                  </div>
+                  <div *ngIf="loginForm.password.errors?.['minlength']">
+                    Password must be at least 8 characters long.
+                  </div>
+                  <div *ngIf="loginForm.password.errors?.['maxlength']">
+                    Password must not be longer than 30 characters.
+                  </div>
+              </div>
+             </div>
+             <div class="mb-4">
+               <a href="forgot-password.html" class="text-muted fw-bold">Forgot password ?</a>
+             </div>
+             <button type="submit" class="mb-4 createTask-btn" [disabled]="LoginForm.invalid">Login</button>
+             <div class="sign-up">
+                 <p>Don't have an account ? <a href="#sign" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#sign">Signup</a></p>
+             </div>
+           </div>
+         </form>
+     </div>
+     <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+       <div>
+         <img src="/assets/images/login-bg.png" alt="login-pic" class="img-fluid">
+       </div>
+     </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+<!-- End Login Modal -->
+<!-- SignUp Modal -->
+<div class="modal fade" id="sign" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-xl">
+<div class="modal-content border-content">
+ <div class="modal-body">
+   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeModal></button>
+   <div class="row">
+     <div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-5">
+         <h3 class="text-center">Sign up</h3>
+         <form method="post" [formGroup]="SignUpForm" (ngSubmit)="createUser()">
+           <div class="mx-5">
+             <div class="mb-4">
+               <label for="username">Username: <span class="text-danger">*</span></label>
+               <input type="text" id="username" formControlName="username" class="form-input" placeholder="Username">
+               <div class="text-danger" *ngIf="SignForm.username.invalid && SignForm.username.touched">
+                  <div *ngIf="SignForm.username.errors?.['required']">
+                    Username is required
+                  </div>
+                  <div *ngIf="SignForm.username.errors?.['minLength']">
+                    Username must be at least 5 characters long.
+                  </div>
+                  <div *ngIf="SignForm.username.errors?.['maxLength']">
+                    Username must not be longer than 30 characters.
+                  </div>
+               </div>
+             </div>
+             <div class="mb-4">
+               <label for="password">Password: <span class="text-danger">*</span></label>
+               <input type="password" id="password" formControlName="password" class="form-input" placeholder="Password">
+               <div class="text-danger" *ngIf="SignForm.password.invalid && SignForm.password.touched">
+                  <div *ngIf="SignForm.password.errors?.['required']">
+                    Password is required
+                  </div>
+                  <div *ngIf="SignForm.password.errors?.['minLength']">
+                    Password must be at least 8 characters long.
+                  </div>
+                  <div *ngIf="SignForm.password.errors?.['maxLength']">
+                    Password must not be longer than 30 characters.
+                  </div>
+               </div>
+             </div>
+             <div class="mb-4">
+               <label for="password">Confirm password: <span class="text-danger">*</span></label>
+               <input type="password" id="password_confirmation" formControlName="password_confirmation" class="form-input" placeholder="Confirm password">
+               <div class="text-danger" *ngIf="SignForm.password_confirmation.invalid && SignForm.password_confirmation.touched">
+                 <div *ngIf="SignForm.password_confirmation.errors?.['required']">`toop
+                    Confirm password is required
+                 </div>
+                 <div *ngIf="SignForm.password_confirmation.errors?.confirmValidator">
+                   Password and Confirm Password must be match.</div>
+               </div>
+             </div>
+             <button type="button" class="mb-2 createTask-btn" type="submit" [disabled]="SignUpForm.invalid">Sign up</button>
+             <div class="sign-up">
+                 <p>Already have an account ? <a href="#login" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#login">Login</a></p>
+             </div>
+           </div>
+         </form>
+     </div>
+     <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+       <div>
+         <img src="/assets/images/login-bg.png" alt="login-pic" class="img-fluid">
+       </div>
+     </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+<!-- End SignUp Modal -->
+<!-- App JS  -->
+<!-- <script src="../assets/js/tasks.js"></script> -->

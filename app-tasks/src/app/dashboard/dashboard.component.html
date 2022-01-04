@@ -1,0 +1,150 @@
+ <!-- Wrapper -->
+ <div class="d-flex" id="wrapper">
+  <!-- Content -->
+  <div id="content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/"><img src="../assets/images/logo.png" width="115" alt="logo-img"></a>
+        <div class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <div class="me-auto"></div>
+          <ul class="navbar-nav d-flex mb-2 mb-lg-0 me-3">
+            <li class="mt-2">
+              <input class="search-form me-2" type="search" placeholder="Search">
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="ProfilDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../assets/images/avatar.png" width="40" alt="profile-img" class="rounded-circle img-fluid">
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="ProfilDropdown">
+                <li><a class="dropdown-item" href="#"><i class="far fa-user"></i>Profil</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item pointer" (click)="Logout()"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Tasks -->
+    <div id="tasks">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-4 col-6" *ngFor="let elt of task;">
+            <div class="task-box">
+              <div class="task-box-top">
+                <div class="rm-btn">
+                  <a (click)="getId(elt.id)" data-bs-toggle="modal" data-bs-target="#removeTask"><i class="fas fa-times"></i></a>
+                  <a (click)="getData(elt)"><i class="fas fa-pen-alt"></i></a>
+                </div>
+                <div class="circle-1"></div>
+                <div class="line-accross"></div>
+                <div class="circle-2"></div>
+              </div>
+              <h3 class="mt-4 fw-bold text-center">Task {{elt.id}}</h3>
+              <p class="text-center text-muted mt-4">
+              {{ elt.description}}
+              </p>
+            </div>
+          </div>
+          <app-spinner></app-spinner>
+          <div class="d-flex justify-content-center my-4">
+            <button type="button" class="createTask-btn" data-bs-toggle="modal" data-bs-target="#NewTask">Add new task</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Tasks -->
+    <!-- footer -->
+    <footer id="footer-2">
+      <div class="d-flex justify-content-between">
+        <p>Copyright © 2021-2022 It's yours . Created by <a href="#">Nano</a></p>
+        <p><a href="#" class="text-muted">Terms & conditions</a></p>
+      </div>
+    </footer>
+    <!-- End footer -->
+  </div>
+  <!-- End content -->
+</div>
+<!-- End wrapper -->
+<!-- Add Modal -->
+<div class="modal fade" id="NewTask">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeModal></button>
+        </div>
+        <form method="post" [formGroup]="taskForm" (submit)="createTask()">
+          <div formArrayName="ArrayTask">
+              <h5 class="modal-title mb-2">Add task/tasks:</h5>
+              <div [formGroupName]="i" *ngFor="let item of getTasksArray(); let i=index;" class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                  <div class="mb-4 me-2">
+                    <input type="text" id="description" class="form-input mt-1" formControlName="description">
+                    <div class="text-danger" *ngIf="tasksArray.controls[i].get('description')?.invalid &&
+                    tasksArray.controls[i].get('description')?.touched">
+                      <div *ngIf="tasksArray.controls[i].get('description')?.errors?.required">
+                        Task is required.
+                      </div>
+                      <div *ngIf="tasksArray.controls[i].get('description')?.errors?.minlength">
+                        Task must be at least 5 characters long.
+                      </div>
+                      <div *ngIf="tasksArray.controls[i].get('description')?.errors?.maxlength">
+                        Task must not be longer than 90 characters.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-12 mt-1">
+                  <a (click)="addItem()" class="plus d-flex justify-content-center align-items-center"><i class="fas fa-plus"></i></a>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-12 mt-1">
+                    <a (click)="removeItem(i)" class="minus d-flex justify-content-center align-items-center"><i class="fas fa-minus"></i></a>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-end">
+            <button type="submit" class="saveTask-btn">Save</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Add Modal -->
+<!-- Edit Modal -->
+<!-- <app-edit-task></app-edit-task> -->
+<!-- End Edit Modal -->
+<!-- Remove Modal -->
+<div class="modal fade" id="removeTask">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="post">
+         <div class="row">
+          <h5 class="modal-title my-4 text-center">Are you sure you want to remove this task ?</h5>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-between">
+              <button type="button" class="btn" data-bs-dismiss="modal" #closeModal2>Cancel</button>
+              <button type="button" class="saveTask-btn" (click)="deleteTask(elementId)">Remove</button>
+          </div>
+         </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Remove Modal -->
+
+<div class="row" *ngIf="task?.length == 0">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+      <h4 class="text-center mt-5">There are no tasks  yet !</h4>
+  </div>
+</div>

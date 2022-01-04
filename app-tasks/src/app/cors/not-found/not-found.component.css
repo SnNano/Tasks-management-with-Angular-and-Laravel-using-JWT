@@ -1,0 +1,29 @@
+/* notFound */
+.oops{
+  font-size: 5rem;
+  color: #d3d1d4;
+}
+
+.notFound-input form input{
+  width: 270px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+div.icon{
+  position: relative;
+}
+.icon::before{
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  content: "\f002";
+  font-weight: 900;
+  padding: 9px 15px;
+  background-color: #fff;
+  left: -46px;
+  top: -1px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}

@@ -1,0 +1,20 @@
+<!-- Edit Modal -->
+      <div class="modal-body">
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.close('Cancel')"></button>
+        </div>
+        <form method="post" [formGroup]="EditTaskForm">
+         <div class="row">
+          <h5 class="modal-title mb-2">Edit task:</h5>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="mb-4 me-2">
+              <input type="text" id="editTask" formControlName="description" class="form-input mt-1">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-end">
+              <button type="button" class="saveTask-btn" (click)="updateTask()">Save</button>
+          </div>
+         </div>
+        </form>
+      </div>
+<!-- End Edit Modal -->
